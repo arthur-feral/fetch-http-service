@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "eslint-config-airbnb"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "jsx-a11y/href-no-hash": "off",
+    "no-shadow": 0,
+    "max-len": [
+      2,
+      200
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "maxBOF": 0,
+        "maxEOF": 1,
+        "max": 2
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.test.js"
+      ],
+      "globals": {
+        "specs": true,
+        "describe": true,
+        "it": true,
+        "before": true,
+        "beforeEach": true,
+        "after": true,
+        "afterEach": true,
+        "context": true
+      }
+    }
+  ]
+}

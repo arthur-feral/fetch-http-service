@@ -1,0 +1,5 @@
+.idea
+.nyc_output
+dist/
+node_modules/
+nyc-reports
