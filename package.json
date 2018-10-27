@@ -1,14 +1,16 @@
 {
   "name": "fetch-http-service",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "HTTP service using fetch API",
   "main": "dist/index.js",
   "scripts": {
+    "lint:js": "eslint lib tests --ext .js",
+    "lint": "yarn run lint:js",
+    "test:js:coverage": "nyc --check-coverage --report-dir=${CIRCLE_ARTIFACTS:-'./nyc-reports'} --reporter=lcov yarn run mocha && yarn run lint:js",
+    "test:js": "yarn run transpile && mocha --compilers js:babel-register -r tests/bootstrap.test.js $(find lib -name '*.test.js')",
+    "test": "yarn run test:js",
     "transpile": "$(npm bin)/babel . --out-dir dist --ignore tests,node_modules,nyc-reports,dist",
-    "prepublish": "yarn run transpile",
-    "lint:js": "eslint lib tests --ext .js ",
-    "test": "nyc --check-coverage --report-dir=${CIRCLE_ARTIFACTS:-'./nyc-reports'} --reporter=lcov yarn run mocha && yarn run lint:js",
-    "mocha": "mocha --compilers js:babel-register -r tests/bootstrap.test.js $(find lib -name '*.test.js')"
+    "prepublish": "yarn run transpile"
   },
   "author": "Arthur FERAL <arthur.feral@hotmail.fr>",
   "license": "MIT",
@@ -19,6 +21,7 @@
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -38,6 +41,9 @@
     "url-parse": "^1.4.0",
     "whatwg-fetch": "^2.0.4"
   },
+  "files": [
+    "dist/"
+  ],
   "nyc": {
     "exclude": [
       "dist/"

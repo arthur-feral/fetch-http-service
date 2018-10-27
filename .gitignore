@@ -3,3 +3,5 @@
 dist/
 node_modules/
 nyc-reports
+.DS_Store
+yarn-*.log

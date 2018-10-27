@@ -1,11 +1,7 @@
-import getRequest from './lib/get';
-import postRequest from './lib/post';
-import patchRequest from './lib/patch';
-import putRequest from './lib/put';
-import delRequest from './lib/del';
+export { default as get } from './lib/get';
+export { default as post } from './lib/post';
+export { default as put } from './lib/put';
+export { default as patch } from './lib/patch';
+export { default as del } from './lib/del';
 
-export const get = getRequest;
-export const post = postRequest;
-export const put = putRequest;
-export const patch = patchRequest;
-export const del = delRequest;
+export { default as request } from './lib/request';
