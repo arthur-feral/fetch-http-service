@@ -1,4 +1,5 @@
 /* eslint-disable */
+import babel_polyfill from 'babel-polyfill';
 import jsdom from 'jsdom';
 import sinon from 'sinon';
 
@@ -58,3 +59,5 @@ global.FormData.prototype.append = sinon.stub();
 global.File = function () {
 
 };
+
+global.Blob = global.window.Blob;
