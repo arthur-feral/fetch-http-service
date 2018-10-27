@@ -34,6 +34,7 @@ get(
 
 ### API
 ####GET/DELETE
+
 | name           | type      | default | required | Description                                                                        |
 |----------------|-----------|---------|----------|------------------------------------------------------------------------------------|
 | url            | `string`  |         | yes      | The endpoint url                                                                   |
@@ -42,7 +43,9 @@ get(
 | useCredentials | `boolean` | `false` | no       | Do you wanan send the cookies for the request?                                     |
 | isCrossDomain  | `boolean` | `false` | no       | Is the request cross domain?                                                       |
 
+
 ####POST/PATCH/PUT
+
 | name           | type      | default | required | Description                                                                        |
 |----------------|-----------|---------|----------|------------------------------------------------------------------------------------|
 | url            | `string`  |         | yes      | The endpoint url                                                                   |
